@@ -1,13 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+
+:root {
+  /* Font families */
+  --ff-primary: 'Oswald', sans-serif;
+  --ff-secondary: 'La Belle Aurore', cursive;
+
+  /* Font weights */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  /* Colors */ 
+  --color-accent: #f0b666;
+  --color-error: #fb701f;
+  --color-bg-light: #f9f2e4;
+  --color-bg-dark: #1f4590;
+  --color-bg-darker: #0D3482;
+  --color-shadow-dark: rgba(1, 4, 45, .3);
+  --color-shadow-light: rgba(50, 48, 110, 1);
+
+  /* Font sizes */
+  --fs-h1: 3.5rem; /* 56px */
+  --fs-h2: 2.125rem; /* 34px */
+  --fs-h3: 1.5625rem; /* 25px */
+  --fs-h4: 1.375rem; /* 22px */
+  --fs-body: 1rem;
+  --fs-card: .9375rem; /* 15px */
+
+  /* Widths and Heights */
+  --max-width: 1280px;
+  --header-height: 7.5em;
+  --header-max-height: 8.25rem;
+  --horizontal-pad: 2em;
+}
+
+@media (min-width: 412px) {
+  :root {
+    --fs-h1: 4rem; /* 64px */
+    --fs-h2: 2.375rem; /* 38px */
+    --fs-h3: 1.875rem; /* 28px */
+    --fs-h4: 1.375rem; /* 22px */
+    --fs-body: 1.0625rem; /* 17px */
+    --fs-card: .9375rem; /* 15px */
+
+    --horizontal-pad: 2.5em;
+  }
+}
+
+@media (min-width: 540px) {
+  :root {
+    --fs-h1: 4.75rem; /* 76px */
+    --fs-h2: 2.625rem; /* 42px */
+    --fs-h3: 2.25rem; /* 36px */
+    --fs-h4: 1.75rem; /* 28px */
+    --fs-body: 1.35rem;
+    --fs-card: 1.25rem; /* 20px */
+
+    --horizontal-pad: 4em;
+  }
+}
+
+@media (min-width: 870px) {
+  :root {
+    --fs-h1: 4.5rem; /* 72px */
+  }
+}
+
+@media (min-width: 1400px) {
+  :root {
+    --fs-h1: 5.375rem; /* 86px */
+    --fs-h2: 2.75rem; /* 44px */
+    --fs-card: 1.375rem; /* 22px */
+
+    --horizontal-pad: 5em;
+  }
+}
+
+@media (min-width: 1920px) {
+  :root {
+    --fs-h1: 6rem; /* 96px */
+    --fs-h2: 3rem;/* 48px */
+    --fs-card: 1.5rem; /* 24px */
+  }
+}
+
+
+/* GENERAL STYLES */
+
+*, 
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: var(--ff-primary);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-size: var(--fs-body);
+  color: var(--color-bg-light);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  white-space: break-spaces;
+  font-family: inherit;
 }
+
+label {
+  display: block;
+}
+
+textarea {
+  resize: vertical;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--horizontal-pad);
+}
+
+.full-height {
+  min-height: 100vh;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  transition: all .2s;
+  outline: none;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+
+@media (min-width: 820px) {
+  .btn-big {
+    font-size: var(--fs-h4);
+  }
+}
+
+
+/* Typography */
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+h1 { 
+  font-size: var(--fs-h1); 
+  font-weight: var(--fw-bold);
+}
+
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }

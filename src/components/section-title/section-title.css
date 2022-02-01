@@ -1,0 +1,10 @@
+.section-title {
+    color: var(--color-accent);
+    text-transform: uppercase;
+    margin-bottom: .15em; 
+}
+
+.letter-spacing {
+    letter-spacing: -2px;
+}
+  

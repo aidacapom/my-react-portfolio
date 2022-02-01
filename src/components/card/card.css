@@ -1,0 +1,23 @@
+.card {
+    background: var(--color-bg-light);
+    color: var(--color-bg-dark);
+    min-height: 6.75em;
+    min-width: 16.75em;
+    max-width: max-content;
+    padding: .75em 1.5em .75em 2em;
+    line-height: 1.75;
+    font-size: var(--fs-card);
+    text-align: left;
+    border-radius: 1em;
+    box-shadow: -7px 7px 10px 5px rgba(12, 25, 51, 0.2);
+}
+
+@media(min-width: 1400px) {
+    .card {
+        min-width: 17.25em;
+    }
+
+    .big-desktop-left-pad-card {
+        padding-left: 2.5em;
+    }
+}

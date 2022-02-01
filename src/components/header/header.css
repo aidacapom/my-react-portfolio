@@ -1,0 +1,216 @@
+.site-header {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: var(--header-height);
+    max-height: var(--header-max-height);
+    padding-left: var(--horizontal-pad);
+    padding-right: var(--horizontal-pad);
+    z-index: 10;
+}
+
+.menu-opened {
+    position: fixed;
+    top: 0; 
+    bottom: auto;
+}
+
+.logo__text, 
+.logo__accent {
+    font-family: var(--ff-secondary);
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-reg);
+    transition: color .2s;
+}
+
+.logo__accent {
+    color: var(--color-accent);
+}
+
+.logo, .menu-toggle {
+    z-index: 10;
+}
+
+.menu-toggle {
+    background: none;
+    position: relative;
+}
+
+.menu-toggle__bar {
+    display: block;
+    margin: .25em 0;
+    transition: all .4s;
+}
+
+.menu-toggle__bar path {
+    transition: fill .6s ease-in;
+}
+
+.site-header.menu-opened .menu-toggle__bar:first-child path,
+.site-header.menu-opened .menu-toggle__bar:last-child path {
+    fill: var(--color-bg-dark);
+}
+
+.site-header.menu-opened .menu-toggle__bar:first-child {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.site-header.menu-opened .menu-toggle__bar:last-child {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+.site-header.menu-opened .menu-toggle__bar:nth-child(2)  {
+    opacity: 0;
+}
+
+.site-menu {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 0 var(--horizontal-pad);
+    background: var(--color-bg-light);
+    color: var(--color-bg-dark);
+    transition: opacity .4s, visibility .4s;
+}
+
+.site-header:not(.menu-opened) .site-menu {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.site-header.menu-opened .site-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.site-menu__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    min-height: 70%;
+    padding: var(--header-height) 0;
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-medium);
+    letter-spacing: .01em;
+    text-transform: none;
+}
+
+.site-menu__list-item {
+    margin: .3em 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.site-menu__link {
+    display: flex;
+    align-items: center;
+    padding: .5em 0;
+    transition: transform .3s;
+}
+
+.site-menu__link:hover {
+    color: var(--color-bg-darker);
+    transform: translateX(.75em);
+}
+
+.site-menu__link svg {
+    margin-right: .8em;
+}
+
+.site-menu__link:not(.active-link) svg path {
+    stroke: var(--color-bg-dark);
+    fill: var(--color-bg-dark);
+    transition: all .15s;
+}
+
+.site-menu__link:hover svg path {
+    stroke: var(--color-accent);
+    fill: var(--color-accent);
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 869px) {
+    .site-header.menu-opened .logo__text {
+        color: var(--color-bg-dark);
+    }
+}
+
+@media (min-width: 870px) {
+
+    .site-header.menu-opened {
+        position: absolute;
+    }
+
+    .logo-light .logo__text {
+        color: var(--color-bg-light);
+    }
+    
+    .logo-dark .logo__text {
+        color: var(--color-bg-dark);
+    }
+    
+    .logo-light .logo__accent {
+        color: var(--color-accent);
+    }
+    
+    .logo-dark .logo__accent {
+        color: var(--color-bg-darker);
+    }
+
+    .menu-toggle-light .menu-toggle__bar path {
+        fill: var(--color-accent);
+    }
+    
+    .menu-toggle-dark .menu-toggle__bar path {
+        fill: var(--color-bg-dark);
+    }
+
+    .site-header.menu-opened .menu-toggle__bar:first-child path,
+    .site-header.menu-opened .menu-toggle__bar:last-child path {
+        fill: var(--color-accent);
+    }
+
+    .site-menu {
+        position: absolute;
+        top: 2vh;
+        right: 1.3em;
+        left: initial;
+        bottom: initial;
+        width: 10em;
+        font-size: var(--fs-h3);
+        height: initial;
+        padding: 0 1.25em;
+        border: 6px solid var(--color-bg-darker);
+        border-radius: .6em;
+    }
+
+    .site-menu__list {
+        font-size: var(--fs-h3);
+        text-transform: none;
+        padding: 1em 0 .75em;
+    }
+}
+
+@media(min-width: 1400px) {
+    .site-header,
+    .site-header.menu-opened  
+    {
+        position: fixed;
+    }
+
+    .site-menu {
+        right: 1.6em;
+    }
+}

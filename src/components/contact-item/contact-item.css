@@ -1,0 +1,17 @@
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: .4em 0;
+    margin: .3em 0;
+}
+
+.contact-item__text {
+    margin-left: .8em;
+}
+
+@media (min-width: 820px) {
+    .contact-item {
+        padding: .3em 0;
+        margin: .2em 0;
+    }
+}

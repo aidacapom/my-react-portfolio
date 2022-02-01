@@ -1,0 +1,11 @@
+.note {
+    height: min-content;
+    font-family: var(--ff-secondary);
+    font-size: var(--fs-card);
+    letter-spacing: .05em;
+    text-align: left;
+    line-height: 1.6;
+    background: transparent;
+    color: var(--color-bg-light);
+    opacity: .55;
+}

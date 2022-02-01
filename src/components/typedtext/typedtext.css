@@ -1,0 +1,33 @@
+.typed-text {
+    white-space: break-spaces;
+    margin: 0;
+    padding: 0;
+    font-family: var(--ff-secondary);
+    letter-spacing: .05em;
+    min-width: max-content;
+}
+
+.typed-text::after {
+    content: '|';
+    color: var(--color-accent);
+    font-family: var(--ff-secondary);
+    font-size: 100%;
+    margin-left: 3px;
+    animation: blink 750ms steps(28) infinite;
+}
+
+.paused::after {
+    animation: slow-blink 1.5s steps(28) infinite;
+}
+
+@keyframes blink {
+    to {
+        color: transparent;
+    }
+}
+
+@keyframes slow-blink {
+    30%, 100% {
+        color: transparent;
+    }
+}
